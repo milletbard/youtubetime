@@ -10,7 +10,7 @@ const mutations = {
 
 const actions = {
   updateStepsActive: ({ commit }, active) => {
-    commit("UPDATE_STEPS_ACTIVE", active)
+    commit('UPDATE_STEPS_ACTIVE', active)
   }
 }
 

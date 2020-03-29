@@ -9,12 +9,12 @@
 </template>
 
 <script>
-import { mapState } from "vuex"
+import { mapState } from 'vuex'
 
 export default {
-  name: "YoutubeStep",
+  name: 'YoutubeStep',
   computed: {
-    ...mapState("youtube", ["youtubeStepActive"])
+    ...mapState('youtubeTime', ['youtubeStepActive'])
   },
   methods: {
     next() {

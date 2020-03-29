@@ -3,9 +3,8 @@
     <div class="container">
       <div class="navbar-brand">
         <a class="navbar-item is-size-4 has-text-primary">
-          <logo style="margin-right: -10px;" />| YoutubeTime |
-        </a>
-
+          <logo style="margin-right: -10px;" />YoutubeTime</a
+        >
         <!-- 
         <a
           role="button"
@@ -42,16 +41,34 @@
     </div>
   </nav>
 </template>
-
 <script>
+import Logo from './Logo'
 export default {
-  name: "Navbar"
+  name: 'Navbar',
+  components: {
+    Logo
+  },
+  data: () => ({
+    active: false
+  }),
+  methods: {
+    toggleBurger() {
+      const { active } = this
+      this.active = !active
+    }
+  }
 }
 </script>
-
-<style scoped>
+<style>
 .navbar {
   border-bottom: 1px solid #526488;
-  min-height: 60px;
 }
+/* @keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+} */
 </style>
