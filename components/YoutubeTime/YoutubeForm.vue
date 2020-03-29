@@ -60,7 +60,6 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
 import { split, take, join, dropRight } from 'lodash'
 export default {
   name: 'YoutubeForm',
@@ -114,7 +113,9 @@ export default {
     }
   },
   methods: {
-    ...mapActions('youtube', ['updateStepsActive']),
+    updateStepsActive(step) {
+      this.$store.commit('youtubeTime/UPDATE_STEPS_ACTIVE', step)
+    },
     submitForm() {
       this.$refs.form.validate((valid) => {
         if (valid) {

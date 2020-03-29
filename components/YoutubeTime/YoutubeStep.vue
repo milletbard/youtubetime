@@ -1,6 +1,6 @@
 <template>
   <div class="stpes">
-    <el-steps direction="vertical" :active="youtubeStepActive">
+    <el-steps direction="vertical" :active="active">
       <el-step></el-step>
       <el-step></el-step>
       <el-step></el-step>
@@ -9,16 +9,19 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
-
 export default {
   name: 'YoutubeStep',
   computed: {
-    ...mapState('youtubeTime', ['youtubeStepActive'])
+    active() {
+      return this.$store.state.youtubeTime.youtubeStepActive
+    }
   },
   methods: {
+    updateStepsActive(step) {
+      this.$store.commit('youtubeTime/UPDATE_STEPS_ACTIVE', step)
+    },
     next() {
-      if (this.active++ > 2) this.active = 0
+      if (this.active++ > 2) this.updateStepsActive(0)
     }
   }
 }
