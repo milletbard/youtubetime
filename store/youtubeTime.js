@@ -8,14 +8,7 @@ const mutations = {
   }
 }
 
-const actions = {
-  updateStepsActive: ({ commit }, active) => {
-    commit('UPDATE_STEPS_ACTIVE', active)
-  }
-}
-
 export default {
   state,
-  mutations,
-  actions
+  mutations
 }
