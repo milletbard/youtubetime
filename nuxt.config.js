@@ -7,6 +7,10 @@ const routerBase =
       }
     : {}
 
+module.exports = {
+  plugins: [{ src: '~plugins/ga.js', mode: 'client' }]
+}
+
 export default {
   mode: 'universal',
   /*
