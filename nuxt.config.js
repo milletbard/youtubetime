@@ -7,10 +7,6 @@ const routerBase =
       }
     : {}
 
-module.exports = {
-  plugins: [{ src: '~plugins/ga.js', mode: 'client' }]
-}
-
 export default {
   mode: 'universal',
   /*
@@ -42,7 +38,8 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['@/plugins/element-ui'],
+
+  plugins: ['@/plugins/element-ui', { src: '~plugins/ga.js', mode: 'client' }],
   /*
    ** Nuxt.js dev-modules
    */
